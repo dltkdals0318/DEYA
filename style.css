@@ -658,6 +658,92 @@ img {
 }
 
 /* ── BOOKING PAGE ── */
+.booking-hero {
+  position: relative;
+  width: 100%;
+}
+
+.booking-hero > img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.booking-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+/* ── 위치 조정 ── */
+.bk-course {
+  position: absolute;
+  top: 688px; /* 세로 위치 조정 */
+  left: 75px; /* 가로 위치 조정 */
+}
+.bk-cal {
+  position: absolute;
+  top: 800px; /* 세로 위치 조정 */
+  left: 420px; /* 가로 위치 조정 */
+}
+.bk-info {
+  position: absolute;
+  top: 870px; /* 세로 위치 조정 */
+  left: 1105px; /* 가로 위치 조정 */
+  font-size: 24px;
+  line-height: 1.51;
+}
+
+/* ── 공통 드롭다운 버튼 ── */
+.bk-btn {
+  background: none;
+  border: none;
+  font-family: "Satoshi", sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  color: var(--black);
+  cursor: pointer;
+  padding: 0;
+}
+
+.bk-course .bk-btn {
+  font-size: 32px;
+}
+
+/* ── 공통 드롭다운 목록 ── */
+.bk-dropdown {
+  display: none;
+  list-style: none;
+  margin-top: 12px;
+}
+
+.bk-dropdown.open {
+  display: block;
+}
+
+.bk-dropdown li {
+  padding: 8px 0;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  color: var(--gray);
+}
+
+.bk-dropdown li:hover {
+  color: var(--black);
+}
+
+.bk-course .bk-dropdown {
+  margin-top: 20px;
+}
+
+.bk-course .bk-dropdown li {
+  font-size: 18px;
+}
+
 .booking-bar {
   display: flex;
   align-items: baseline;
@@ -693,19 +779,20 @@ img {
 
 .calendar-table th {
   font-weight: 400;
-  padding: 10px 20px;
-  border: 1px solid var(--gray);
+  padding: 0px 16px;
+  border: 1.5px solid var(--black);
   text-align: center;
-  font-size: 11px;
+  font-size: 20px;
   letter-spacing: 0.06em;
-  color: var(--gray);
+  color: var(--black);
 }
 
 .calendar-table td {
-  padding: 14px 20px;
-  border: 1px solid var(--gray);
+  padding: 19px 30px;
+  border: 1.5px solid var(--black);
   text-align: center;
-  font-size: 12px;
+  vertical-align: top;
+  font-size: 16px;
   cursor: pointer;
   min-width: 60px;
 }
@@ -723,28 +810,27 @@ img {
   padding-top: 10px;
 }
 
-.booking-sidebar p {
-  font-size: 14px;
-  line-height: 2.1;
-}
-
 .btn-box {
   display: inline-block;
-  margin-top: 52px;
-  padding: 14px 0;
-  border: 1px solid var(--black);
-  font-size: 14px;
+  margin-top: 95px;
+  padding: 14px 10px;
+  border: 2px solid var(--black);
+  border-radius: 0;
+  font-size: 24px;
   width: 200px;
   text-align: center;
   cursor: pointer;
   background: transparent;
   font-family: "Satoshi", sans-serif;
   letter-spacing: 0.04em;
+  color: var(--black);
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .btn-box:hover {
   background: var(--black);
-  color: #fff;
+  color: var(--white);
 }
 
 /* ── MY PAGE ── */
@@ -806,4 +892,45 @@ img {
 .mypage-sidebar p {
   font-size: 14px;
   line-height: 2.1;
+}
+
+/* ── MY PAGE HERO ── */
+.mypage-hero {
+  position: relative;
+  width: 100%;
+}
+
+.mypage-hero > img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.mypage-booking-overlay {
+  position: absolute;
+  z-index: 10;
+  top: 223px; /* 세로 위치 조정 */
+  left: 1106px; /* 가로 위치 조정 */
+}
+.mypage-info {
+  font-size: 24px;
+  line-height: 1.6;
+  margin-bottom: 90px;
+}
+
+.mypage-change-btn {
+  display: inline-block;
+  padding: 14px 0;
+  border: 2px solid var(--black);
+  font-size: 24px;
+  width: 200px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  background: transparent;
+  cursor: pointer;
+}
+
+.mypage-change-btn:hover {
+  background: var(--black);
+  color: var(--white);
 }
