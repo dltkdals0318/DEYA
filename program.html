@@ -1,107 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=1440, initial-scale=1.0">
-  <title>DEYA — Program</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1440, initial-scale=1.0" />
+    <title>DEYA — Program</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">
+        <img class="nav-wordmark" src="source/main/logo.png" alt="DEYA" />
+        <span class="nav-tagline">Back to<br />Sunday Scrub</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="program.html" class="active">PROGRAM</a></li>
+        <li><a href="booking.html">BOOKING</a></li>
+        <li><a href="mypage.html">MY PAGE</a></li>
+      </ul>
+      <div class="nav-icons">
+        <img src="source/main/obj_cucumber_photo 1.png" alt="" />
+        <img src="source/main/obj_cucumber_photo 2.png" alt="" />
+        <img src="source/main/obj_cucumber_photo 3.png" alt="" />
+      </div>
+    </nav>
 
-<nav class="nav">
-  <a href="index.html" class="nav-logo">
-    <img class="nav-wordmark" src="source/main/Layer_1.png" alt="DEYA">
-    <span class="nav-tagline">Back to<br>Sunday Scrub</span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="about.html">ABOUT</a></li>
-    <li><a href="program.html" class="active">PROGRAM</a></li>
-    <li><a href="booking.html">BOOKING</a></li>
-    <li><a href="mypage.html">MY PAGE</a></li>
-  </ul>
-  <div class="nav-icons">
-    <img src="source/program/obj_cucumber_photo 1.png" alt="">
-    <img src="source/program/obj_cucumber_photo 2.png" alt="">
-    <img src="source/program/obj_cucumber_photo 3.png" alt="">
-  </div>
-</nav>
+    <section class="program-hero">
+      <img src="Program (12 Columns).png" alt="DEYA Program" />
 
-<!-- HERO -->
-<section class="page-hero">
-  <img src="source/program/47 1.png" alt="DEYA Program">
-</section>
-
-<!-- BASIC LINE -->
-<section class="program-section">
-  <div class="program-label">
-    <h2>BASIC LINE</h2>
-  </div>
-  <div class="program-items">
-    <div class="program-item">
-      <span class="program-item-num">01</span>
-      <a href="program-detail.html" class="program-item-name">DEYA SCRUB</a>
-      <span class="program-item-price">₩ 78.0</span>
-    </div>
-    <div class="program-item">
-      <span class="program-item-num">02</span>
-      <a href="program-detail.html" class="program-item-name">DEYA MILK CARE</a>
-      <span class="program-item-price">₩ 89.0</span>
-    </div>
-  </div>
-</section>
-
-<!-- PREMIUM LINE -->
-<section class="program-section">
-  <div class="program-label">
-    <h2>PREMIUM LINE</h2>
-    <p>Premium full-body treatment enriched with aroma therapy and intensive moisture care. Enjoy deeply stress-relieving scents and rich hydration that nourish and restore your skin from within.</p>
-    <br>
-    <p>Every session is completed with a luxurious silky finish that leaves both your skin and hair feeling soft, smooth, and completely renewed.</p>
-  </div>
-  <div class="program-items">
-    <div class="program-item">
-      <span class="program-item-num">01</span>
-      <a href="program-detail.html" class="program-item-name">DEYA HALF</a>
-      <span class="program-item-price">₩ 110.0</span>
-    </div>
-    <div class="program-item">
-      <span class="program-item-num">02</span>
-      <a href="program-detail.html" class="program-item-name">DEYA BACK</a>
-      <span class="program-item-price">₩ 150.0</span>
-    </div>
-    <div class="program-item">
-      <span class="program-item-num">03</span>
-      <a href="program-detail.html" class="program-item-name">DEYA BODY</a>
-      <span class="program-item-price">₩ 170.0</span>
-    </div>
-    <div class="program-item">
-      <span class="program-item-num">04</span>
-      <a href="program-detail.html" class="program-item-name">DEYA DEEP</a>
-      <span class="program-item-price">₩ 190.0</span>
-    </div>
-    <div class="program-item">
-      <span class="program-item-num">05</span>
-      <a href="program-detail.html" class="program-item-name">DEYA SPECIAL</a>
-      <span class="program-item-price">₩ 220.0</span>
-    </div>
-  </div>
-</section>
-
-<footer class="site-footer">
-  <span class="footer-copy">DEYA @ 2026. All rights reserved.</span>
-  <div class="footer-social">
-    <a href="#" aria-label="YouTube">
-      <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5a3 3 0 0 0-2.1 2.1C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.75 15.5V8.5L15.8 12l-6.05 3.5z"/></svg>
-    </a>
-    <a href="#" aria-label="Facebook">
-      <svg viewBox="0 0 24 24"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.5h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
-    </a>
-    <a href="#" aria-label="Instagram">
-      <svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85 0 3.2-.01 3.58-.07 4.85-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07-3.2 0-3.58-.01-4.85-.07-3.26-.15-4.77-1.7-4.92-4.92C2.17 15.58 2.16 15.2 2.16 12c0-3.2.01-3.58.07-4.85C2.38 3.86 3.9 2.31 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.7.07 7.05.01 8.33 0 8.74 0 12c0 3.26.01 3.67.07 4.95.2 4.36 2.62 6.78 6.98 6.98C8.33 23.99 8.74 24 12 24c3.26 0 3.67-.01 4.95-.07 4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95 0-3.26-.01-3.67-.07-4.95-.2-4.35-2.62-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32A6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
-    </a>
-  </div>
-</footer>
-<div class="footer-tiles"></div>
-
-</body>
+      <div class="program-items-overlay">
+        <a href="program-detail.html" class="prog-item prog-item-1">
+          <span class="prog-num">01</span>
+          <span class="prog-name">DEYA SCRUB</span>
+        </a>
+        <a href="program-detail.html" class="prog-item prog-item-2">
+          <span class="prog-num">02</span>
+          <span class="prog-name">DEYA MILK CARE</span>
+        </a>
+        <a href="program-detail.html" class="prog-item prog-item-3">
+          <span class="prog-num">03</span>
+          <span class="prog-name">DEYA HALF</span>
+        </a>
+        <a href="program-detail.html" class="prog-item prog-item-4">
+          <span class="prog-num">04</span>
+          <span class="prog-name">DEYA BACK</span>
+        </a>
+        <a href="program-detail.html" class="prog-item prog-item-5">
+          <span class="prog-num">05</span>
+          <span class="prog-name">DEYA BODY</span>
+        </a>
+        <a href="program-detail.html" class="prog-item prog-item-6">
+          <span class="prog-num">06</span>
+          <span class="prog-name">DEYA DEEP</span>
+        </a>
+        <a href="program-detail.html" class="prog-item prog-item-7">
+          <span class="prog-num">07</span>
+          <span class="prog-name">DEYA SPECIAL</span>
+        </a>
+      </div>
+    </section>
+  </body>
 </html>

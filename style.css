@@ -18,10 +18,17 @@
 }
 
 :root {
-  --bg: #f0ede3;
-  --red: #cf1f4a;
-  --black: #1a1a1a;
-  --gray: #888;
+  --mint: #d3eee8;
+  --white: #f9faf8;
+  --yellow: #f9ffed;
+  --brown: #afa79e;
+  --cherry: #cd3d5c;
+  --deya-black: #3b3b3b;
+
+  --bg: #f9faf8;
+  --red: #cd3d5c;
+  --black: #3b3b3b;
+  --gray: #afa79e;
   --gutter: 60px;
 }
 
@@ -30,6 +37,7 @@ body {
   color: var(--black);
   font-family: "Satoshi", sans-serif;
   min-width: 1440px;
+  letter-spacing: -0.01em;
 }
 
 a {
@@ -45,7 +53,7 @@ img {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 20px 120px;
+  padding: 30px 73px;
   background: var(--bg);
   position: sticky;
   top: 0;
@@ -55,31 +63,46 @@ img {
 .nav-logo {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  gap: 12px;
 }
 
 .nav-wordmark {
-  height: 42px;
+  height: 56px;
 }
 
 .nav-tagline {
-  font-size: 10px;
+  font-size: 16px;
   color: var(--red);
-  line-height: 1.5;
-  padding-top: 4px;
+  line-height: 1.3;
+  padding-top: 18px;
+  padding-left: 5px;
   letter-spacing: 0.01em;
 }
 
 .nav-links {
   display: flex;
-  gap: 24px;
+  gap: 25px;
   list-style: none;
   align-items: center;
-  padding-top: 12px;
+  padding-top: 25px;
 }
 
+/* ── 각 nav 항목 개별 위치 조정 ── */
+.nav-links li:nth-child(1) {
+  margin-left: 300px;
+} /* ABOUT    */
+.nav-links li:nth-child(2) {
+  margin-left: 0px;
+} /* PROGRAM  */
+.nav-links li:nth-child(3) {
+  margin-left: 0px;
+} /* BOOKING  */
+.nav-links li:nth-child(4) {
+  margin-left: 0px;
+} /* MY PAGE  */
+
 .nav-links a {
-  font-size: 13px;
+  font-size: 18px;
   letter-spacing: 0.07em;
   color: var(--black);
 }
@@ -91,16 +114,19 @@ img {
 
 .nav-icons {
   display: flex;
-  width: 30px;
-  gap: -20px;
-  padding-top: 8px;
+  padding-top: 17.5px;
 }
 
 .nav-icons img {
-  width: 28px;
-  height: 28px;
+  width: 35px;
+  height: auto;
   border-radius: 50%;
   object-fit: cover;
+  margin-left: 0px;
+}
+
+.nav-icons img:first-child {
+  margin-left: 0;
 }
 
 /* ── FOOTER ── */
@@ -139,7 +165,7 @@ img {
 
 .footer-tiles {
   height: 64px;
-  background-color: #b8ccb0;
+  background-color: var(--mint);
   background-image:
     repeating-linear-gradient(
       0deg,
@@ -159,6 +185,16 @@ img {
 }
 
 /* ── MAIN PAGE ── */
+.main-hero {
+  width: 100%;
+}
+
+.main-hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .hero-collage {
   padding: 0 var(--gutter);
   text-align: center;
@@ -203,7 +239,7 @@ img {
 .split-text p {
   font-size: 13px;
   line-height: 1.9;
-  color: #333;
+  color: var(--black);
 }
 
 .keyword-section {
@@ -233,7 +269,7 @@ img {
   font-family: "Heitz", sans-serif;
   font-size: 12px;
   line-height: 1.7;
-  color: #444;
+  color: var(--black);
 }
 
 .photo-grid {
@@ -276,7 +312,7 @@ img {
   font-family: "Heitz", "Satoshi", sans-serif;
   font-size: 12.5px;
   line-height: 2;
-  color: #333;
+  color: var(--black);
 }
 
 .about-brand {
@@ -302,7 +338,7 @@ img {
 .about-brand-text {
   font-size: 13px;
   line-height: 2;
-  color: #333;
+  color: var(--black);
 }
 
 .about-brand-text .kr {
@@ -320,7 +356,7 @@ img {
   font-weight: 400;
   letter-spacing: 0.04em;
   margin-bottom: 28px;
-  color: #333;
+  color: var(--black);
 }
 
 .directions-layout {
@@ -341,12 +377,12 @@ img {
 
 .directions-table td {
   padding: 18px 20px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--gray);
   line-height: 1.7;
 }
 
 .directions-table td:first-child {
-  color: #555;
+  color: var(--gray);
   width: 140px;
   vertical-align: middle;
 }
@@ -361,6 +397,123 @@ img {
 }
 
 /* ── PROGRAM PAGE ── */
+.program-hero {
+  position: relative;
+  width: 100%;
+}
+
+.program-hero > img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.program-items-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.prog-item {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--black);
+  text-decoration: none;
+}
+
+.prog-num {
+  font-size: 24px;
+  color: var(--gray);
+}
+
+.prog-name {
+  position: relative;
+  font-size: 24px;
+  letter-spacing: 0.05em;
+}
+
+.prog-name::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: var(--line-offset, -3px); /* 선 세로 위치 */
+  width: var(--line-width, 100%); /* 선 길이 */
+  height: 1.5px;
+  background: var(--black);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.prog-item:hover .prog-name::after {
+  transform: scaleX(1);
+}
+
+/* 항목별 선 길이·위치 개별 조정 */
+.prog-item-1 {
+  --line-width: 100%;
+  --line-offset: -3px;
+}
+.prog-item-2 {
+  --line-width: 100%;
+  --line-offset: -3px;
+}
+.prog-item-3 {
+  --line-width: 100%;
+  --line-offset: -3px;
+}
+.prog-item-4 {
+  --line-width: 100%;
+  --line-offset: -3px;
+}
+.prog-item-5 {
+  --line-width: 100%;
+  --line-offset: -3px;
+}
+.prog-item-6 {
+  --line-width: 100%;
+  --line-offset: -3px;
+}
+.prog-item-7 {
+  --line-width: 100%;
+  --line-offset: -3px;
+}
+
+/* ── 각 항목 위치 조정 (top / left) ── */
+.prog-item-1 {
+  top: 791px;
+  left: 615px;
+}
+.prog-item-2 {
+  top: 876px;
+  left: 615px;
+}
+.prog-item-3 {
+  top: 1237px;
+  left: 615px;
+}
+.prog-item-4 {
+  top: 1322px;
+  left: 615px;
+}
+.prog-item-5 {
+  top: 1407px;
+  left: 615px;
+}
+.prog-item-6 {
+  top: 1492px;
+  left: 615px;
+}
+.prog-item-7 {
+  top: 1577px;
+  left: 615px;
+}
+
 .program-section {
   display: flex;
   gap: 0;
@@ -386,7 +539,7 @@ img {
 .program-label p {
   font-size: 12px;
   line-height: 1.9;
-  color: #555;
+  color: var(--gray);
 }
 
 .program-items {
@@ -397,11 +550,11 @@ img {
   display: flex;
   align-items: center;
   padding: 18px 0;
-  border-bottom: 1px solid #d0d0d0;
+  border-bottom: 1px solid var(--gray);
 }
 
 .program-items .program-item:first-child {
-  border-top: 1px solid #d0d0d0;
+  border-top: 1px solid var(--gray);
 }
 
 .program-item-num {
@@ -457,7 +610,7 @@ img {
   flex: 1;
   font-size: 13px;
   line-height: 1.9;
-  color: #444;
+  color: var(--black);
   max-width: 500px;
 }
 
@@ -510,16 +663,16 @@ img {
 .calendar-table th {
   font-weight: 400;
   padding: 10px 20px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--gray);
   text-align: center;
   font-size: 11px;
   letter-spacing: 0.06em;
-  color: #555;
+  color: var(--gray);
 }
 
 .calendar-table td {
   padding: 14px 20px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--gray);
   text-align: center;
   font-size: 12px;
   cursor: pointer;
@@ -527,7 +680,7 @@ img {
 }
 
 .calendar-table td:hover {
-  background: rgba(207, 31, 74, 0.07);
+  background: rgba(205, 61, 92, 0.07);
 }
 .calendar-table td.selected {
   background: var(--red);
@@ -605,12 +758,12 @@ img {
 
 .mypage-table td {
   padding: 18px 20px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--gray);
   line-height: 1.7;
 }
 
 .mypage-table td:first-child {
-  color: #555;
+  color: var(--gray);
   width: 140px;
   vertical-align: middle;
 }
