@@ -2,7 +2,7 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=1440, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DEYA — My Page</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -19,14 +19,14 @@
         <li><a href="mypage.html" class="active">MY PAGE</a></li>
       </ul>
       <div class="nav-icons">
-        <img src="source/nav/cucumber.png" alt="" />
-        <img src="source/nav/cucumber.png" alt="" />
-        <img src="source/nav/cucumber.png" alt="" />
+        <img src="source/nav/cucumber.png" alt="" decoding="async" />
+        <img src="source/nav/cucumber.png" alt="" decoding="async" />
+        <img src="source/nav/cucumber.png" alt="" decoding="async" />
       </div>
     </nav>
 
     <section class="mypage-hero">
-      <img src="My Page (12 Columns).png" alt="DEYA My Page" />
+      <img src="source/pages/mypage.webp" alt="DEYA My Page" width="2880" height="1942" fetchpriority="high" decoding="async" />
 
       <div class="mypage-booking-overlay">
         <p class="mypage-info" id="mypage-info">
@@ -40,9 +40,7 @@
 
     <script>
       const info = localStorage.getItem("deya-booking-info");
-      const course = localStorage.getItem("deya-booking-course");
       if (info) document.getElementById("mypage-info").innerHTML = info;
-      if (course) document.getElementById("mypage-course").textContent = course;
     </script>
   </body>
 </html>

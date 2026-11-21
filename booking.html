@@ -2,7 +2,7 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=1440, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DEYA — Booking</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -19,21 +19,19 @@
         <li><a href="mypage.html">MY PAGE</a></li>
       </ul>
       <div class="nav-icons">
-        <img src="source/nav/cucumber.png" alt="" />
-        <img src="source/nav/cucumber.png" alt="" />
-        <img src="source/nav/cucumber.png" alt="" />
+        <img src="source/nav/cucumber.png" alt="" decoding="async" />
+        <img src="source/nav/cucumber.png" alt="" decoding="async" />
+        <img src="source/nav/cucumber.png" alt="" decoding="async" />
       </div>
     </nav>
 
     <section class="booking-hero">
-      <img src="Booking (12 Columns).png" alt="DEYA Booking" />
+      <img src="source/pages/booking.webp" alt="DEYA Booking" width="2880" height="3044" fetchpriority="high" decoding="async" />
 
       <div class="booking-overlay">
-
-        <!-- 코스 선택 -->
         <div class="bk-course">
-          <button class="bk-btn course-selected">DEYA SCRUB</button>
-          <ul class="bk-dropdown course-dropdown">
+          <button class="bk-btn">DEYA SCRUB</button>
+          <ul class="bk-dropdown">
             <li>DEYA SCRUB</li>
             <li>DEYA MILK CARE</li>
             <li>DEYA HALF</li>
@@ -44,9 +42,8 @@
           </ul>
         </div>
 
-        <!-- 달력 -->
         <div class="bk-cal">
-          <table class="calendar-table" id="cal">
+          <table class="calendar-table">
             <thead>
               <tr>
                 <th>WED</th>
@@ -62,7 +59,6 @@
           </table>
         </div>
 
-        <!-- 선택 정보 + Submit -->
         <div class="bk-info">
           <p id="selected-info">
             Date: 2026.06.19<br />
@@ -71,12 +67,10 @@
           </p>
           <button class="btn-box" id="submit-btn">Submit</button>
         </div>
-
       </div>
     </section>
 
     <script>
-      // 달력 생성 (June 2026, WED-start, June 1 = Monday = index 3)
       const tbody = document.getElementById("cal-body");
       const startDay = 3;
       const daysInMonth = 30;
@@ -89,6 +83,7 @@
           if (day >= 1 && day <= daysInMonth) {
             td.textContent = day;
             const d = day;
+            if (d === 19) td.classList.add("selected");
             td.addEventListener("click", () => {
               document.querySelectorAll(".calendar-table td").forEach(el => el.classList.remove("selected"));
               td.classList.add("selected");
@@ -105,11 +100,6 @@
         tbody.appendChild(tr);
       }
 
-      document.querySelectorAll("#cal-body td").forEach(td => {
-        if (td.textContent === "19") td.classList.add("selected");
-      });
-
-      // 코스 드롭다운
       const courseWrap = document.querySelector(".bk-course");
       const courseBtn = courseWrap.querySelector(".bk-btn");
       const courseList = courseWrap.querySelector(".bk-dropdown");
@@ -131,12 +121,9 @@
         courseList.classList.remove("open");
       });
 
-      // Submit: localStorage 저장 후 마이페이지로 이동
       document.getElementById("submit-btn").addEventListener("click", () => {
         const info = document.getElementById("selected-info").innerHTML;
-        const course = courseBtn.textContent.trim();
         localStorage.setItem("deya-booking-info", info);
-        localStorage.setItem("deya-booking-course", course);
         location.href = "mypage.html";
       });
     </script>

@@ -2,11 +2,11 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=1440, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DEYA — Back to Sunday Scrub</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="index-page">
+  <body>
     <nav class="nav">
       <a href="index.html" class="nav-logo">
         <img class="nav-wordmark" src="source/main/logo.png" alt="DEYA" />
@@ -19,15 +19,134 @@
         <li><a href="mypage.html">MY PAGE</a></li>
       </ul>
       <div class="nav-icons">
-        <img src="source/nav/cucumber.png" alt="" />
-        <img src="source/nav/cucumber.png" alt="" />
-        <img src="source/nav/cucumber.png" alt="" />
+        <img src="source/nav/cucumber.png" alt="" decoding="async" />
+        <img src="source/nav/cucumber.png" alt="" decoding="async" />
+        <img src="source/nav/cucumber.png" alt="" decoding="async" />
       </div>
     </nav>
 
-    <!-- HERO -->
     <section class="main-hero">
-      <img src="Main (12 Columns).png" alt="DEYA" />
+      <img
+        src="source/pages/main.webp"
+        alt="DEYA"
+        width="2880"
+        height="5988"
+        fetchpriority="high"
+        decoding="async"
+      />
+
+      <div class="hero-slider">
+        <div class="hero-track">
+          <div class="hero-slide">
+            <img
+              src="source/main/hero_photo.webp"
+              alt="DEYA"
+              width="2592"
+              height="1500"
+            />
+          </div>
+          <div class="hero-slide">
+            <video
+              src="source/video/DEYA_brandfilm.mp4"
+              muted
+              playsinline
+              preload="metadata"
+            ></video>
+          </div>
+        </div>
+      </div>
+      <button class="hero-arrow hero-prev" aria-label="이전">
+        <svg
+          viewBox="0 0 24 48"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="4"
+        >
+          <path d="M20 4 4 24l16 20" />
+        </svg>
+      </button>
+      <button class="hero-arrow hero-next" aria-label="다음">
+        <svg
+          viewBox="0 0 24 48"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="4"
+        >
+          <path d="M4 4l16 20L4 44" />
+        </svg>
+      </button>
     </section>
+
+    <script>
+      const track = document.querySelector(".hero-track");
+      const video = document.querySelector(".hero-slide video");
+      const slideCount = track.children.length;
+      const clone = track.children[0].cloneNode(true);
+      clone.setAttribute("aria-hidden", "true");
+      track.appendChild(clone);
+      let pos = 0;
+
+      function setPos(p, animate) {
+        pos = p;
+        track.style.transition = animate ? "" : "none";
+        track.style.transform = `translateX(-${pos * 100}%)`;
+        if (!animate) track.offsetWidth;
+      }
+
+      function move(dir) {
+        if (pos === slideCount) setPos(0, false);
+        if (dir < 0 && pos === 0) setPos(slideCount, false);
+        setPos(pos + dir, true);
+        onSlideChange();
+      }
+
+      const PHOTO_DURATION = 5000;
+      let autoTimer = null;
+
+      function onSlideChange() {
+        clearTimeout(autoTimer);
+        if (pos % slideCount === 1) {
+          video.currentTime = 0;
+          video.play().catch(() => {
+            autoTimer = setTimeout(() => move(1), PHOTO_DURATION);
+          });
+        } else {
+          video.pause();
+          autoTimer = setTimeout(() => move(1), PHOTO_DURATION);
+        }
+      }
+
+      video.addEventListener("ended", () => move(1));
+      onSlideChange();
+
+      track.addEventListener("transitionend", () => {
+        if (pos === slideCount) setPos(0, false);
+      });
+
+      document
+        .querySelector(".hero-prev")
+        .addEventListener("click", () => move(-1));
+      document
+        .querySelector(".hero-next")
+        .addEventListener("click", () => move(1));
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") move(-1);
+        if (e.key === "ArrowRight") move(1);
+      });
+
+      let touchX = null;
+      track.addEventListener(
+        "touchstart",
+        (e) => (touchX = e.touches[0].clientX),
+        { passive: true },
+      );
+      track.addEventListener("touchend", (e) => {
+        if (touchX === null) return;
+        const dx = e.changedTouches[0].clientX - touchX;
+        if (Math.abs(dx) > 40) move(dx < 0 ? 1 : -1);
+        touchX = null;
+      });
+    </script>
   </body>
 </html>
