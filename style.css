@@ -238,25 +238,25 @@ img {
 }
 
 .prog-item-1 {
-  top: calc(791 * var(--u));
+  top: calc(770 * var(--u));
 }
 .prog-item-2 {
-  top: calc(876 * var(--u));
+  top: calc(855 * var(--u));
 }
 .prog-item-3 {
-  top: calc(1237 * var(--u));
+  top: calc(1206 * var(--u));
 }
 .prog-item-4 {
-  top: calc(1322 * var(--u));
+  top: calc(1289 * var(--u));
 }
 .prog-item-5 {
-  top: calc(1407 * var(--u));
+  top: calc(1372 * var(--u));
 }
 .prog-item-6 {
-  top: calc(1492 * var(--u));
+  top: calc(1455 * var(--u));
 }
 .prog-item-7 {
-  top: calc(1577 * var(--u));
+  top: calc(1538 * var(--u));
 }
 
 .detail-book-btn,
@@ -286,18 +286,18 @@ img {
 
 .bk-course {
   position: absolute;
-  top: calc(688 * var(--u));
+  top: calc(660 * var(--u));
   left: calc(75 * var(--u));
 }
 .bk-cal {
   position: absolute;
-  top: calc(800 * var(--u));
-  left: calc(420 * var(--u));
+  top: calc(777 * var(--u));
+  left: calc(400 * var(--u));
 }
 .bk-info {
   position: absolute;
-  top: calc(870 * var(--u));
-  left: calc(1105 * var(--u));
+  top: calc(865 * var(--u));
+  left: calc(1065 * var(--u));
   font-size: calc(24 * var(--u));
   line-height: 1.51;
 }
@@ -384,11 +384,11 @@ img {
   position: absolute;
   z-index: 10;
   top: calc(223 * var(--u));
-  left: calc(1106 * var(--u));
+  left: calc(1065 * var(--u));
 }
 
 .mypage-info {
   font-size: calc(24 * var(--u));
   line-height: 1.6;
-  margin-bottom: calc(90 * var(--u));
+  margin-bottom: calc(60 * var(--u));
 }
