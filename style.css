@@ -296,7 +296,7 @@ img {
 }
 .bk-info {
   position: absolute;
-  top: calc(865 * var(--u));
+  top: calc(845 * var(--u));
   left: calc(1065 * var(--u));
   font-size: calc(24 * var(--u));
   line-height: 1.51;
